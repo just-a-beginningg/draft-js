@@ -1,7 +1,8 @@
-import { FC, useEffect, useState } from "react";
+import { FC } from "react";
 import { CommonProps } from "../../../types";
 import { START_PATTERN_FILTER } from "../../../constants";
 import { DefaultComponent } from "../default-component/default-component";
+import { useTextContent } from "../../../hooks";
 
 interface HeadingProps extends CommonProps {
   level?: 1 | 2 | 3;
@@ -23,16 +24,10 @@ export const Heading: FC<HeadingProps> = ({ level = 1, ...commonProps }) => {
   const { children, offsetKey } = commonProps;
   const Component = HTML_TAG_MAP[level];
 
-  const [content, setContent] = useState("");
-
-  useEffect(() => {
-    if (!children || children.length == 0) {
-      return;
-    }
-    const text = children[0].props.text ?? "";
-    const regexp = FILTER_MAP[level];
-    setContent(text.replace(regexp, ""));
-  }, [children, level]);
+  const { content } = useTextContent({
+    children,
+    regExp: FILTER_MAP[level],
+  });
 
   return (
     <>
