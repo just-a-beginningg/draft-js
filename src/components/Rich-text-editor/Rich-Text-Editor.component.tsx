@@ -5,7 +5,6 @@ import { compositeDecorator } from "./Composite-decorator.config";
 
 const LOCAL_STORAGE_KEY = "draft-js-content";
 
-
 export const RichTextEditor: FC = () => {
   const editorRef = useRef<Editor>(null);
 
@@ -24,7 +23,6 @@ export const RichTextEditor: FC = () => {
         contentState,
         compositeDecorator
       );
-
       setEditorState(newEditorState);
     }
   }, []);
@@ -34,8 +32,6 @@ export const RichTextEditor: FC = () => {
     const rawContent = convertToRaw(currentContent);
     const markdown = draftjsToMd(rawContent);
     localStorage.setItem(LOCAL_STORAGE_KEY, markdown);
-
-    console.log("working");
   }
 
   return (
