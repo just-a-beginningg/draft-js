@@ -1,6 +1,5 @@
 import { FC, useState, useRef, useEffect } from "react";
 import { convertFromRaw, convertToRaw, Editor, EditorState } from "draft-js";
-// import { draftjsToMd, mdToDraftjs } from "draftjs-md-converter";
 import { compositeDecorator } from "./Composite-decorator.config";
 
 const LOCAL_STORAGE_KEY = "draft-js-content";
