@@ -9,9 +9,9 @@ interface HeadingProps extends CommonProps {
 }
 
 const HTML_TAG_MAP: Record<number, keyof JSX.IntrinsicElements> = {
-  1: "h1",
-  2: "h2",
-  3: "h3",
+  1: "h1", // #
+  2: "h2", // ##
+  3: "h3", // ###
 };
 
 const FILTER_MAP: Record<number, RegExp> = {
@@ -34,7 +34,7 @@ export const Heading: FC<HeadingProps> = ({ level = 1, ...commonProps }) => {
       <Component data-offset-key={`modified--${offsetKey}`}>
         {content}
       </Component>
-      <DefaultComponent {...commonProps}/>
+      <DefaultComponent {...commonProps} />
     </>
   );
 };
