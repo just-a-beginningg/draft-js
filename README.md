@@ -1,3 +1,15 @@
+## Project requirement
+- There are three main components in the layout: Title, Button and Editor.
+- The editor needs to be written in Draft.js
+    - Typing `#` as the first string in a line & pressing space should make anything you type afterward on the same line be in a “Heading 1” format. On pressing space, the aforementioned `#` should disappear.
+        - See “This is a heading” line in the layout image above.
+    - Similarly, typing `*` as the first string in a line and pressing space should correspond to “bold” format
+    - `**` and space = red line
+    - `***` and space = underline
+    - [**Optional**][**Extra points]** If you can add a highlighted code block when the user types ````` and space.
+- Pressing `Save` button should persist everything typed in the editor into `localstorage`. On refreshing the page,  the saved info should be refilled into the editor.
+- Please try your best to make the UI look clean and pleasing
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
