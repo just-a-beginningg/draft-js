@@ -37,7 +37,7 @@ export const RichTextEditor: FC = () => {
   function clearHandler() {
     localStorage.removeItem(LOCAL_STORAGE_KEY);
     setContent(null);
-    setEditorState(EditorState.createEmpty());
+    setEditorState(EditorState.createEmpty(compositeDecorator));
   }
 
   return (
